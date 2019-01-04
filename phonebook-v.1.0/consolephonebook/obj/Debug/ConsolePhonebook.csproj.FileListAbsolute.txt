@@ -1,0 +1,15 @@
+C:\Users\nikol\Desktop\phonebook\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe.config
+C:\Users\nikol\Desktop\phonebook\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe
+C:\Users\nikol\Desktop\phonebook\ConsolePhonebook\bin\Debug\ConsoleLibrary.pdb
+C:\Users\nikol\Desktop\phonebook\ConsolePhonebook\obj\Debug\ConsolePhonebook.csprojResolveAssemblyReference.cache
+C:\Users\nikol\Desktop\phonebook\ConsolePhonebook\obj\Debug\ConsolePhonebook.csproj.CoreCompileInputs.cache
+C:\Users\nikol\Desktop\phonebook\ConsolePhonebook\obj\Debug\ConsoleLibrary.exe
+C:\Users\nikol\Desktop\phonebook\ConsolePhonebook\obj\Debug\ConsoleLibrary.pdb
+D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe.config
+D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe
+D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\bin\Debug\ConsoleLibrary.pdb
+D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\obj\Debug\ConsolePhonebook.csproj.CoreCompileInputs.cache
+D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\obj\Debug\ConsoleLibrary.exe
+D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\obj\Debug\ConsoleLibrary.pdb
+D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe.CodeAnalysisLog.xml
+D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe.lastcodeanalysissucceeded

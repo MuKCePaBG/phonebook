@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
+ <Targets>
+  <Target Name="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\bin\Debug\ConsoleLibrary.exe">
+   <Modules>
+    <Module Name="consolelibrary.exe">
+     <Messages>
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error">Mark 'ConsoleLibrary.exe' with CLSCompliant(true) because it exposes externally visible types.</Issue>
+      </Message>
+     </Messages>
+     <Namespaces>
+      <Namespace Name="ConsolePhonebook">
+       <Types>
+        <Type Name="Program" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#Main(System.String[])" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="args" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook" File="Program.cs" Line="14">Parameter 'args' of 'Program.Main(string[])' is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="ConsolePhonebook.Entity">
+       <Types>
+        <Type Name="User" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Username" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeCompoundWord" Certainty="80" Level="Error" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Entity" File="User.cs" Line="8">The discrete term 'Username' in member name 'User.Username' should be expressed as a compound word, 'UserName'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="ConsolePhonebook.Repository">
+       <Types>
+        <Type Name="ContactsRepository" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Delete(ConsolePhonebook.Entity.Contact)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="243">Object 'ifs' can be disposed more than once in method 'ContactsRepository.Delete(Contact)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 243</Issue>
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="241">Object 'ofs' can be disposed more than once in method 'ContactsRepository.Delete(Contact)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 241</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="229">In externally visible method 'ContactsRepository.Delete(Contact)', validate parameter 'item' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAll()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="171">Object 'fs' can be disposed more than once in method 'ContactsRepository.GetAll()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 171</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="149">Change 'List&lt;Contact&gt;' in 'ContactsRepository.GetAll()' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAll(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="203">Object 'fs' can be disposed more than once in method 'ContactsRepository.GetAll(int)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 203</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="178">Change 'List&lt;Contact&gt;' in 'ContactsRepository.GetAll(int)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetById(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="141">Object 'fs' can be disposed more than once in method 'ContactsRepository.GetById(int)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 141</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNextId()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="42">Object 'fs' can be disposed more than once in method 'ContactsRepository.GetNextId()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 42</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Insert(ConsolePhonebook.Entity.Contact)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="65">Object 'fs' can be disposed more than once in method 'ContactsRepository.Insert(Contact)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 65</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Save(ConsolePhonebook.Entity.Contact)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="252">In externally visible method 'ContactsRepository.Save(Contact)', validate parameter 'item' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Update(ConsolePhonebook.Entity.Contact)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="110">Object 'ifs' can be disposed more than once in method 'ContactsRepository.Update(Contact)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 110</Issue>
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="ContactsRepository.cs" Line="108">Object 'ofs' can be disposed more than once in method 'ContactsRepository.Update(Contact)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 108</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PhonesRepository" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Delete(ConsolePhonebook.Entity.Phone)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="235">Object 'ifs' can be disposed more than once in method 'PhonesRepository.Delete(Phone)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 235</Issue>
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="233">Object 'ofs' can be disposed more than once in method 'PhonesRepository.Delete(Phone)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 233</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="222">In externally visible method 'PhonesRepository.Delete(Phone)', validate parameter 'item' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAll()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="166">Object 'fs' can be disposed more than once in method 'PhonesRepository.GetAll()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 166</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="145">Change 'List&lt;Phone&gt;' in 'PhonesRepository.GetAll()' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAll(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="197">Object 'fs' can be disposed more than once in method 'PhonesRepository.GetAll(int)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 197</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="173">Change 'List&lt;Phone&gt;' in 'PhonesRepository.GetAll(int)' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetById(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="138">Object 'fs' can be disposed more than once in method 'PhonesRepository.GetById(int)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 138</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNextId()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="44">Object 'fs' can be disposed more than once in method 'PhonesRepository.GetNextId()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 44</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Insert(ConsolePhonebook.Entity.Phone)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="66">Object 'fs' can be disposed more than once in method 'PhonesRepository.Insert(Phone)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 66</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Save(ConsolePhonebook.Entity.Phone)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="244">In externally visible method 'PhonesRepository.Save(Phone)', validate parameter 'item' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Update(ConsolePhonebook.Entity.Phone)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="108">Object 'ifs' can be disposed more than once in method 'PhonesRepository.Update(Phone)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 108</Issue>
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="PhonesRepository.cs" Line="106">Object 'ofs' can be disposed more than once in method 'PhonesRepository.Update(Phone)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 106</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UsersRepository" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Delete(ConsolePhonebook.Entity.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="228">Object 'ifs' can be disposed more than once in method 'UsersRepository.Delete(User)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 228</Issue>
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="226">Object 'ofs' can be disposed more than once in method 'UsersRepository.Delete(User)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 226</Issue>
+            </Message>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="212">In externally visible method 'UsersRepository.Delete(User)', validate parameter 'item' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAll()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="184">Object 'fs' can be disposed more than once in method 'UsersRepository.GetAll()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 184</Issue>
+            </Message>
+            <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="160">Change 'List&lt;User&gt;' in 'UsersRepository.GetAll()' to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Issue>
+            </Message>
+            <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="160">Change 'UsersRepository.GetAll()' to a property if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetById(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="153">Object 'fs' can be disposed more than once in method 'UsersRepository.GetById(int)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 153</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetByUsernameAndPassword(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="Username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+             <Issue Name="MemberShouldBeCompoundWord" Certainty="80" Level="Error" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="248">The discrete term 'Username' in member name 'UsersRepository.GetByUsernameAndPassword(string, string)' should be expressed as a compound word, 'UserName'.</Issue>
+            </Message>
+            <Message Id="username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterShouldBeCompoundWord" Certainty="80" Level="Error" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="248">In member 'UsersRepository.GetByUsernameAndPassword(string, string)', the discrete term 'username' in parameter name 'username' should be expressed as a compound word, 'userName'.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="273">Object 'fs' can be disposed more than once in method 'UsersRepository.GetByUsernameAndPassword(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 273</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetNextId()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="44">Object 'fs' can be disposed more than once in method 'UsersRepository.GetNextId()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 44</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Insert(ConsolePhonebook.Entity.User)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="68">Object 'fs' can be disposed more than once in method 'UsersRepository.Insert(User)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 68</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Save(ConsolePhonebook.Entity.User)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="237">In externally visible method 'UsersRepository.Save(User)', validate parameter 'item' before using it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Update(ConsolePhonebook.Entity.User)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="120">Object 'ifs' can be disposed more than once in method 'UsersRepository.Update(User)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 120</Issue>
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Repository" File="UsersRepository.cs" Line="118">Object 'ofs' can be disposed more than once in method 'UsersRepository.Update(User)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 118</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="ConsolePhonebook.Service">
+       <Types>
+        <Type Name="AuthenticationService" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AuthenticateUser(System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="username" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+             <Issue Name="MemberParameterShouldBeCompoundWord" Certainty="80" Level="Error" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\Service" File="AuthenticationService.cs" Line="12">In member 'AuthenticationService.AuthenticateUser(string, string)', the discrete term 'username' in parameter name 'username' should be expressed as a compound word, 'userName'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="ConsolePhonebook.Tools">
+       <Types>
+        <Type Name="ContactManagementEnum" Kind="Enum" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="EnumsShouldHaveZeroValue" Category="Microsoft.Design" CheckId="CA1008" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+           <Issue Name="NotFlagsNoZeroValue" Certainty="95" Level="CriticalError">Add a member to 'ContactManagementEnum' that has a value of zero with a suggested name of 'None'.</Issue>
+          </Message>
+          <Message TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+           <Issue Name="TypeNoAlternate" Certainty="95" Level="CriticalError">Rename type name 'ContactManagementEnum' so that it does not end in 'Enum'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="PhoneManagementEnum" Kind="Enum" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="EnumsShouldHaveZeroValue" Category="Microsoft.Design" CheckId="CA1008" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+           <Issue Name="NotFlagsNoZeroValue" Certainty="95" Level="CriticalError">Add a member to 'PhoneManagementEnum' that has a value of zero with a suggested name of 'None'.</Issue>
+          </Message>
+          <Message TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+           <Issue Name="TypeNoAlternate" Certainty="95" Level="CriticalError">Rename type name 'PhoneManagementEnum' so that it does not end in 'Enum'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="UserManagementEnum" Kind="Enum" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="EnumsShouldHaveZeroValue" Category="Microsoft.Design" CheckId="CA1008" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+           <Issue Name="NotFlagsNoZeroValue" Certainty="95" Level="CriticalError">Add a member to 'UserManagementEnum' that has a value of zero with a suggested name of 'None'.</Issue>
+          </Message>
+          <Message TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+           <Issue Name="TypeNoAlternate" Certainty="95" Level="CriticalError">Rename type name 'UserManagementEnum' so that it does not end in 'Enum'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="ConsolePhonebook.View">
+       <Types>
+        <Type Name="AdminView" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Show()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="ontacts" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="AdminView.cs" Line="22">Correct the spelling of the unrecognized token 'ontacts' in the literal '"[C]ontacts Management"'.</Issue>
+            </Message>
+            <Message Id="ser" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="AdminView.cs" Line="21">Correct the spelling of the unrecognized token 'ser' in the literal '"[U]ser Management"'.</Issue>
+            </Message>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="AdminView.cs" Line="12">The 'this' parameter (or 'Me' in Visual Basic) of 'AdminView.Show()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ContactsManagerView" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Add()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="127">The 'this' parameter (or 'Me' in Visual Basic) of 'ContactsManagerView.Add()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Delete()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="192">The 'this' parameter (or 'Me' in Visual Basic) of 'ContactsManagerView.Delete()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAll()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="78">The 'this' parameter (or 'Me' in Visual Basic) of 'ContactsManagerView.GetAll()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RenderMenu()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="dd" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="49">Correct the spelling of the unrecognized token 'dd' in the literal '"[A]dd Contact"'.</Issue>
+            </Message>
+            <Message Id="dit" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="50">Correct the spelling of the unrecognized token 'dit' in the literal '"[E]dit Contact"'.</Issue>
+            </Message>
+            <Message Id="elete" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="51">Correct the spelling of the unrecognized token 'elete' in the literal '"[D]elete Contact"'.</Issue>
+            </Message>
+            <Message Id="iew" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="48">Correct the spelling of the unrecognized token 'iew' in the literal '"[V]iew Contact"'.</Issue>
+            </Message>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="42">The 'this' parameter (or 'Me' in Visual Basic) of 'ContactsManagerView.RenderMenu()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Show()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="32">Modify 'ContactsManagerView.Show()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Update()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="150">The 'this' parameter (or 'Me' in Visual Basic) of 'ContactsManagerView.Update()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#View()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="104">The 'this' parameter (or 'Me' in Visual Basic) of 'ContactsManagerView.View()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message Id="phonesRepository" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="ContactsManagerView.cs" Line="111">'ContactsManagerView.View()' declares a variable, 'phonesRepository', of type 'PhonesRepository', which is never used or is only assigned to. Use this variable or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LoginView" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message Id="Login" TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="Breaking">
+           <Issue Name="Type" Certainty="95" Level="Error">Replace the term 'Login' in type name 'LoginView' with the preferred alternate 'LogOn'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#Show()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="LoginView.cs" Line="11">The 'this' parameter (or 'Me' in Visual Basic) of 'LoginView.Show()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PhonesManagerView" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Delete()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="PhonesManagerView.cs" Line="122">The 'this' parameter (or 'Me' in Visual Basic) of 'PhonesManagerView.Delete()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RenderMenu()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="dd" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="PhonesManagerView.cs" Line="61">Correct the spelling of the unrecognized token 'dd' in the literal '"[A]dd Phone"'.</Issue>
+            </Message>
+            <Message Id="elete" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="PhonesManagerView.cs" Line="62">Correct the spelling of the unrecognized token 'elete' in the literal '"[D]elete Phone"'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UserManagementView" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Add()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="131">The 'this' parameter (or 'Me' in Visual Basic) of 'UserManagementView.Add()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Delete()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="236">The 'this' parameter (or 'Me' in Visual Basic) of 'UserManagementView.Delete()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Exit()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="259">The 'this' parameter (or 'Me' in Visual Basic) of 'UserManagementView.Exit()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetAll()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="81">The 'this' parameter (or 'Me' in Visual Basic) of 'UserManagementView.GetAll()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#getAppendString(System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="227">The 'this' parameter (or 'Me' in Visual Basic) of 'UserManagementView.getAppendString(string, string)' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RenderMenu()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="dd" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="52">Correct the spelling of the unrecognized token 'dd' in the literal '"[A]dd User"'.</Issue>
+            </Message>
+            <Message Id="dit" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="53">Correct the spelling of the unrecognized token 'dit' in the literal '"[E]dit User"'.</Issue>
+            </Message>
+            <Message Id="elete" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="54">Correct the spelling of the unrecognized token 'elete' in the literal '"[D]elete User"'.</Issue>
+            </Message>
+            <Message Id="iew" TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="51">Correct the spelling of the unrecognized token 'iew' in the literal '"[V]iew User"'.</Issue>
+            </Message>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="45">The 'this' parameter (or 'Me' in Visual Basic) of 'UserManagementView.RenderMenu()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Show()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalError" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="35">Modify 'UserManagementView.Show()' to catch a more specific exception than 'Exception' or rethrow the exception.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#View()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="ExcludedInSource" Created="2019-01-04 20:41:46Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="D:\Uni\3kurs\analiz na koda\phonebook-v.1.0\ConsolePhonebook\View" File="UserManagementView.cs" Line="103">The 'this' parameter (or 'Me' in Visual Basic) of 'UserManagementView.View()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182264.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+   <Name>Compound words should be cased correctly</Name>
+   <Description>Avoid creating compound words from terms which exist in the dictionary as discrete terms. Do not create a compound word such as 'StopWatch' or 'PopUp'. These terms are recognized in the dictionary and should be cased as 'Stopwatch' and 'Popup'.</Description>
+   <Resolution Name="MemberParameterShouldBeCompoundWord">In member {0}, the discrete term '{1}' in parameter name {2} should be expressed as a compound word, '{3}'.</Resolution>
+   <Resolution Name="MemberShouldBeCompoundWord">The discrete term '{0}' in member name {1} should be expressed as a compound word, '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb264474.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="80">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 166</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+   <Name>Do not catch general exception types</Name>
+   <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+   <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182137.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+   <Name>Do not expose generic lists</Name>
+   <Description>Do not expose List&lt;T&gt; in object models. Use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt; instead. List&lt;T&gt; is meant to be used from implementation, not in object model API. List&lt;T&gt; is optimized for performance at the cost of long term versioning. For example, if you return List&lt;T&gt; to the client code, you will not ever be able to receive notifications when client code modifies the collection.</Description>
+   <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182142.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="EnumsShouldHaveZeroValue" Category="Microsoft.Design" CheckId="CA1008">
+   <Name>Enums should have zero value</Name>
+   <Description>An enum should generally have a zero value. If the enum is not decorated with the Flags attribute, it should have a member with a value of zero that represents the empty state. Optionally, this value is named 'None'. For a Flags-attributed enum, a zero-valued member is optional and, if it exists, should always be named 'None'. This value should indicate that no values have been set in the enum. Using a zero-valued member for other purposes is contrary to the use of the Flags attribute in that the bitwise AND and OR operators are useless with the member.</Description>
+   <Resolution Name="NotFlagsNoZeroValue">Add a member to {0} that has a value of zero with a suggested name of 'None'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182149.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="IdentifiersShouldNotHaveIncorrectSuffix" Category="Microsoft.Naming" CheckId="CA1711">
+   <Name>Identifiers should not have incorrect suffix</Name>
+   <Description>Types that do not extend certain base types should not use reserved name suffixes. Types and members should not use 'Ex' or 'New' to distinguish them from an earlier version of the same API, instead, use a numeric suffix such as '2' or provide a more meaningful suffix. Concrete type implementations and members should not end 'Impl'. Members instead, should either consider using the suggested alternate 'Core' in replacement of 'Impl' or avoid any suffix at all.</Description>
+   <Resolution Name="TypeNoAlternate">Rename type name {0} so that it does not end in '{1}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182247.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="namingrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="Literals should be spelled correctly" Category="Microsoft.Naming" CheckId="CA2204">
+   <Name>Literals should be spelled correctly</Name>
+   <Description>This rule parses the literal string into words, tokenizing compound words, and checks the spelling of each word/token.</Description>
+   <Resolution Name="Default">Correct the spelling of the unrecognized token '{0}' in the literal '{1}'.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/bb264488.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+   <Name>Mark assemblies with CLSCompliantAttribute</Name>
+   <Description>Assemblies should explicitly state their CLS compliance using the CLSCompliant attribute. An assembly without this attribute is not CLS-compliant. Assemblies, modules, and types can be CLS-compliant even if some parts of the assembly, module, or type are not CLS-compliant. The following rules apply: 1) If the element is marked CLSCompliant, any noncompliant members must have the CLSCompliant attribute present with its argument set to false. 2) A comparable CLS-compliant alternative member must be supplied for each member that is not CLS-compliant.</Description>
+   <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182156.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in Visual Basic). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that ensures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245046.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182278.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+   <Name>Review unused parameters</Name>
+   <Description>Review parameters in non-virtual methods that are not used in the method body to ensure no correctness exists around failure to access them. Unused parameters incur maintenance and performance costs. Sometimes a violation of this rule can point to an implementation bug in the method (i.e. the parameter should actually have been used in the method body). Exclude warnings of this rule if the parameter has to exist because of backward compatibility.</Description>
+   <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182268.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePreferredTerms" Category="Microsoft.Naming" CheckId="CA1726">
+   <Name>Use preferred terms</Name>
+   <Description>Use preferred terms over deprecated alternates.</Description>
+   <Resolution Name="Type">Replace the term '{0}' in type name {1} with the preferred alternate '{2}'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182258.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="namingrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+   <Name>Use properties where appropriate</Name>
+   <Description>Properties should be used instead of Get/Set methods in most situations. Methods are preferable to properties in the following situations: the operation is a conversion, is expensive or has an observable side-effect; the order of execution is important; calling the member twice in succession creates different results; a member is static but returns a mutable value; or the member returns an array.</Description>
+   <Resolution Name="Default">Change {0} to a property if appropriate.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182181.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062">
+   <Name>Validate arguments of public methods</Name>
+   <Description>All reference arguments passed to externally visible methods should be checked against null (Nothing in VB). If appropriate, throw a System.ArgumentNullException when the argument is null.</Description>
+   <Resolution Name="Default">In externally visible method {0}, validate parameter '{1}' before using it.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182182.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>
